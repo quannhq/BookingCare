@@ -15,6 +15,7 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
+            isShowPassword: false,
         };
     }
     handleOnChangeUsername = (event) => {
@@ -32,12 +33,9 @@ class Login extends Component {
      console.log('all state: ',this.state);
     }
     handleShowHidePassword = () => {
-        let x = document.querySelector('.custom-input-password input');
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
+        this.setState({
+            isShowPassword: !this.state.isShowPassword
+        });
     }
     render() {
         
@@ -64,14 +62,14 @@ class Login extends Component {
                            
                             <div className='custom-input-password'>
                                 <input 
-                                type='password' 
+                                type={this.state.isShowPassword ? 'text' : 'password'}
                                 className='form-control' 
                                 placeholder='Enter your password'
                                 onChange={(event) => this.handleOnChangePassword(event)}
                                 />
-                                <i class="far fa-eye"></i>
+                                <i className="far fa-eye"></i>
                                 <span onClick={() => this.handleShowHidePassword()}>
-                                <i class="fas fa-eye-slash"></i>
+                                    <i className={this.state.isShowPassword ? 'fas fa-eye': 'fas fa-eye-slash'}></i>
                                 </span>
                             </div>
                         </div>
