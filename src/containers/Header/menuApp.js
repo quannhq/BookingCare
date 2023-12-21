@@ -1,5 +1,5 @@
 export const adminMenu = [
-    { //hệ thống
+    { //System hệ thống
         name: 'menu.system.user', menus: [
             {
 
@@ -35,7 +35,7 @@ export const adminMenu = [
     },
 ];
 export const doctorMenu = [
-    { //hệ thống
+    { //System hệ thống
         name: 'menu.doctor.user', menus: [
             {
                 name: 'menu.doctor.schedule-manage', link: '/doctor/schedule-manage',
