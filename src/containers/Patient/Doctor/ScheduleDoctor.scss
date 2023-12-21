@@ -1,0 +1,46 @@
+.calendar {
+    display              : grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap                  : 10px;
+    margin-top           : 20px;
+    margin-bottom        : 20px;
+
+
+
+    button {
+        padding         : 8px 10px;
+        background-color: #fff8ae;
+        font-weight     : 500;
+        border-radius   : 10px;
+        border          : none;
+
+        &:hover {
+            background-color: #0084ff7a;
+            color           : white;
+        }
+    }
+}
+
+.schedule-left {
+    select {
+        margin-bottom: 5px;
+        border       : none;
+        border-bottom: 1px solid red;
+        padding      : 10px 0 10px 0;
+        outline      : none;
+        color        : #337ab7;
+        font-weight  : 500;
+        cursor       : pointer;
+    }
+
+    h2 {
+        margin     : 10px;
+        font-size  : 20px;
+        font-weight: 500;
+    }
+
+    span {
+        margin-top: 5px;
+    }
+
+}

@@ -1,0 +1,40 @@
+.sp{
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px #20212447;
+    &-left{
+        width: 50%;
+        border-right: 1px solid #eeeeee;
+        padding: 0px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    &-right{
+        width: 50%;
+    }
+}
+.description{
+    margin-top: 50px;
+    background-color: #fff;
+    padding-top: 17px;
+    border-radius: 10px;
+    p{
+        margin-left: 10px;
+    }
+    ul{
+        margin-left: 20px;
+    }
+    // border: 1px solid red !important;
+}
+.specialty{
+    background-color: #eee;
+    padding-top: 20px;
+}
+.doctor-profile-header-img img {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}

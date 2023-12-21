@@ -1,0 +1,42 @@
+ .download_app {
+     display              : grid;
+     grid-template-columns: repeat(2, 1fr);
+     column-gap           : 3rem;
+     margin-top           : 3rem;
+
+     .download_left {
+         .download_right-content {
+             .download_heading {
+                 font-size  : 4rem;
+                 font-weight: 500;
+                 color      : #FFC10F;
+             }
+
+             .download_description {
+                 font-size : 1.4rem;
+                 text-align: justify;
+                 padding   : 1rem 1rem 1rem 0;
+             }
+
+         }
+
+         .download_right-qr {
+
+             .download_left-img {
+                 width     : 200px;
+                 margin    : auto 0;
+                 display   : block;
+                 margin-top: 2.5rem;
+             }
+         }
+     }
+
+     .download_right {
+         .download_right-img {
+             width  : 400px;
+             margin : auto;
+             right  : 0;
+             display: block;
+         }
+     }
+ }

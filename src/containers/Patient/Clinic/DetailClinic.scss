@@ -1,0 +1,88 @@
+.clinic-header {
+    margin-top: 44px;
+    position  : relative;
+
+    &-img {
+        text-align: center;
+
+        .bgr-clinic {
+            height             : 250px;
+            width              : 100%;
+            background-position: center;
+            background-repeat  : no-repeat;
+            background-size    : cover;
+        }
+    }
+
+    &-name {
+        margin-top : 30px;
+        font-size  : 28px;
+        font-weight: 300;
+
+        i {
+            font-size: 34px;
+            color    : #17a2b8;
+        }
+
+        span {
+            font-size  : 30px;
+            font-weight: 500;
+        }
+    }
+
+    &-address {
+        margin-top   : 0px;
+        font-size    : 16px;
+        font-weight  : 400;
+        margin-bottom: 10px;
+
+        i {
+            font-size  : 30px;
+            margin-left: 5px;
+        }
+
+        span {
+            font-size  : 16px;
+            font-weight: 400;
+        }
+    }
+
+    &-btn {
+        position        : absolute;
+        bottom          : 10px;
+        right           : 120px;
+        border          : 1px solid #ecdb1f;
+        padding         : 10px;
+        background-color: #ecdb1f;
+        border-radius   : 10px;
+        font-size       : 16px;
+        font-weight     : 400;
+        box-shadow      : 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.description {
+    margin-top: 30px;
+
+    .des-up {
+        font-size    : 26px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        color        : #007bff;
+        font-weight  : 400;
+        cursor       : pointer;
+    }
+}
+
+.book-up {
+    font-size    : 26px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color        : #007bff;
+    font-weight  : 400;
+    cursor       : pointer;
+}

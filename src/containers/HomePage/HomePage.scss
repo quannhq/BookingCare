@@ -1,0 +1,57 @@
+.slick-prev {
+    z-index    : 100;
+    margin-left: 6px;
+
+}
+
+.slick-prev:before {
+    width    : 46px;
+    height   : 46px;
+    color    : #0aa9df !important;
+    font-size: 40px !important;
+}
+
+.slick-next {
+    margin-right: 22px;
+}
+
+.slick-next:before {
+    width    : 46px;
+    height   : 46px;
+    color    : #0aa9df !important;
+    font-size: 40px !important;
+
+}
+
+.home-page {
+    text-transform: capitalize;
+}
+
+.section__header{
+    position   : relative;
+    display: flex ;
+    justify-content: space-between;
+
+        h3{
+            display: inline;
+            color      : #0aa9df;
+            font-size  : 2.6rem;
+            padding    : 1rem 0 2.5rem 0.5rem;
+            font-weight: 500;
+            z-index    : 1;
+        }
+
+        button{
+            position: absolute;
+            right: 0;
+            border: none;
+            margin: 1.5rem 0 2.5rem 0.5rem;
+            color: #FFC10F;
+
+
+            &:hover{
+                cursor: pointer;
+                color: #0aa9df;
+            }
+        }
+    }

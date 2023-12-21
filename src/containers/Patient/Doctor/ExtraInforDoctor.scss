@@ -1,0 +1,47 @@
+.content {
+    &-up {
+        margin-top: 10px;
+
+        .extra-info {
+            margin-left: 5px;
+        }
+    }
+
+    &-down {
+        margin-top : 10px;
+        border-top : 1px solid red;
+        padding-top: 12px;
+
+        &-left {
+            display: inline;
+        }
+
+        p {
+            display: inline;
+            color  : rgb(101, 198, 228);
+            cursor : pointer;
+        }
+
+        table {
+            background-color: #666;
+            border          : 1px solid #ddd;
+            width           : 100%;
+            margin-top      : 10px;
+
+            tr {
+                height          : 50px;
+                border          : inset;
+                background-color: rgb(250, 248, 248);
+
+                td {
+                    padding: 10px;
+                }
+            }
+
+            tr:last-child {
+                height          : 10px;
+                background-color: rgb(247, 243, 243);
+            }
+        }
+    }
+}

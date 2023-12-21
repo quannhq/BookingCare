@@ -1,0 +1,39 @@
+.doctor-profile{
+    &-header{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        // margin-bottom: 20px;
+        padding: 15px 1px;
+        &-img {
+            text-align: center;
+            img{
+                width: 80px !important;
+                height: 80px !important;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        &-content {
+            h2{
+                font-size: 18px;
+            }
+        }
+        &-more{       
+            width: 220px;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+        .price{
+            width: 180px;
+            padding:  10px;
+            border: 1px solid #30305775;
+            margin-left: 50px;
+            margin-top: 20px;
+            box-shadow: 2px 1px 0px #30305775;
+        }
+    }
+
+    
+    
+}

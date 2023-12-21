@@ -1,0 +1,41 @@
+
+.specialty-card {
+    padding: 6px;
+
+    .card {
+        cursor       : pointer;
+        height       : 200px;
+        max-width    : 100%;
+        border       : .1rem solid rgba(0, 0, 0, .1);
+        border-radius: .4rem;
+
+        .card-img {
+            min-height             : 156px;
+            width                  : 100%;
+            background-position    : center;
+            background-repeat      : no-repeat;
+            background-size        : cover;
+            border-top-right-radius: .2rem;
+            border-top-left-radius : .2rem;
+        }
+
+        .card-body {
+            align-items: center;
+            position   : relative;
+
+            .card-title {
+                position : absolute;
+                font-size: 1.4rem;
+                margin   : auto 0;
+                top      : 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .card:hover {
+        .card-title {
+            color: #4ABDE2;
+        }
+    }
+}

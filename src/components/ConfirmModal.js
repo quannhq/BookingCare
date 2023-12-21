@@ -84,6 +84,7 @@ class ConfirmModal extends Component {
                                     <button className="btn btn-add" onClick={this.onClose} >
                                         <FormattedMessage id="common.close" />
                                     </button>
+
                                     <button ref={this.acceptBtnRef} className="btn btn-add" onClick={this.onAcceptBtnClick}>
                                         <FormattedMessage id={"common.accept"} />
                                     </button>

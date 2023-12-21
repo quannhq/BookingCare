@@ -1,0 +1,100 @@
+.home {
+    background         : url(../../../assets/images/bookingcare-cover-4.jpg) no-repeat;
+    background-position: center;
+    background-size    : cover;
+    background-color   : #fff;
+    width              : 100%;
+    height             : 95vh;
+    position           : relative;
+
+    .home_cover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.1));
+        padding         : 45px 0;
+        color           : #333;
+        text-align      : center;
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        margin-top      : 40px;
+        height          : 80vh;
+
+
+        .content {
+            text-align: center;
+            width     : 100%;
+            position  : absolute;
+            top       : 50%;
+            transform : translateY(-90%);
+
+            h3 {
+                color         : #fff;
+                font-size     : 3.75rem;
+                font-weight   : 800;
+                text-shadow   : 1px 1px 1px #333;
+                text-transform: uppercase;
+
+                span {
+                    color: #FFC10F;
+                }
+            }
+
+            p {
+                margin        : auto;
+                color         : #4ABDE2;
+                font-size     : 2rem;
+                padding       : 1rem 0;
+                line-height   : 1.8;
+                width         : 60%;
+                text-shadow   : 1px 1px 1px rgb(75, 102, 109);
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .home_cover-footer {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+        position        : absolute;
+        width           : 100%;
+        bottom          : 0;
+        left            : 0;
+        padding-top     : 20px;
+        padding-bottom  : 40px;
+    }
+
+    .home_list {
+        bottom               : 0;
+        padding              : 0 12rem;
+        display              : grid;
+        grid-template-columns: repeat(5, 1fr);
+        text-align           : center;
+        align-items          : center;
+        z-index              : 1;
+        cursor               : pointer;
+
+        .home_circle {
+            width           : 70px;
+            height          : 70px;
+            position        : relative;
+            border-radius   : 50%;
+            background-color: #fff;
+            margin          : auto auto 1rem;
+
+            .home_img {
+                width    : 50px;
+                position : absolute;
+                top      : 50%;
+                left     : 50%;
+                transform: translate(-50%, -50%);
+            }
+
+        }
+
+        .home_title {
+            font-size  : 1.75rem;
+            font-weight: 500;
+            color      : #000;
+        }
+
+
+    }
+}

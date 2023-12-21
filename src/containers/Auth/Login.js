@@ -1,94 +1,131 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
-
 import * as actions from "../../store/actions";
-
-import "./Login.scss";
+import doctor from '../../assets/images/doctorlogin.png';
+import loginbackground from '../../assets/images/loginbackground.png';
+import background from '../../assets/images/wave.png';
+import './Login.scss';
 import { FormattedMessage } from 'react-intl';
-
+import { handleLoginApi } from '../../services/userService';
 
 
 class Login extends Component {
     constructor(props) {
         super(props);
+        this.btnLogin = React.createRef();
+
         this.state = {
             username: '',
             password: '',
-            isShowPassword: false,
-        };
+            isShowPassword: true,
+            errMessage: '',
+        }
     }
-    handleOnChangeUsername = (event) => {
+
+    onChangeUsername = (event) => {
         this.setState({
             username: event.target.value
-        });
+        })
     }
-    handleOnChangePassword = (event) => {
+    onChangePassword = (event) => {
         this.setState({
             password: event.target.value
-        });
+        })
     }
-    handleLogin = () => {
-     console.log('usename: ',this.state.username,'password: ',this.state.password );
-     console.log('all state: ',this.state);
-    }
-    handleShowHidePassword = () => {
+
+    onShowPassword = () => {
         this.setState({
             isShowPassword: !this.state.isShowPassword
-        });
+        })
+    }
+
+    onHandleLogin = async (event) => {
+        // event.preventDefault()
+        this.setState({
+            errMessage: ''
+        })
+
+        try {
+            let data = await handleLoginApi(this.state.username, this.state.password)
+            if (data && data.errCode !== 0) {
+                this.setState({
+                    errMessage: data.errMessage
+                })
+            }
+            if (data && data.errCode === 0) {
+                this.props.userLoginSuccess(data.user)
+            }
+        } catch (e) {
+            if (e.response) {
+                if (e.response.data) {
+                    this.setState({
+                        errMessage: e.response.data.errMessage
+                    })
+                }
+            }
+
+        }
+    }
+
+    handlerKeyDown = (event) => {
+        if (event.key === "Enter") {
+            this.onHandleLogin();
+        }
     }
     render() {
-        
         return (
-           <div className='login-background'>
-                <div className='login-container'>
-                    <div className='login-content row'>
-                        <div className='col-12 text-login'>Login</div>
-                        <div className='col-12 form-group login-input'>
-                            <label>
-                                Username:
-                            </label>
-                            <input type='text' 
-                                className='form-control' 
-                                placeholder='Enter your name' 
-                                value={this.state.username} 
-                                onChange={(event) => this.handleOnChangeUsername(event)} 
-                            />
-                        </div>
-                        <div className='col-12 form-group login-input'>
-                            <label>
-                                Password:
-                            </label>
-                           
-                            <div className='custom-input-password'>
-                                <input 
-                                type={this.state.isShowPassword ? 'text' : 'password'}
-                                className='form-control' 
-                                placeholder='Enter your password'
-                                onChange={(event) => this.handleOnChangePassword(event)}
+            <div>
+                <img className="wave" src={background} />
+                <div className="container-login">
+                    <div className="img">
+                        <img src={loginbackground} />
+                    </div>
+                    <div className="login-content">
+                        <img src={doctor} />
+                        <h2 className="title">Login</h2>
+                        <div className="input-div one">
+
+                            <div className="div">
+                                <h5>Username:</h5>
+                                <input type="text" className="input"
+                                    value={this.state.username}
+                                    onChange={(event) => { this.onChangeUsername(event) }}
                                 />
-                                <i className="far fa-eye"></i>
-                                <span onClick={() => this.handleShowHidePassword()}>
-                                    <i className={this.state.isShowPassword ? 'fas fa-eye': 'fas fa-eye-slash'}></i>
-                                </span>
                             </div>
                         </div>
-                       <div className='col-12 ' > 
-                            <button className='btn-login' onClick={()=>{this.handleLogin()}} >Login</button>
-                       </div>
-                        <div className='col-12'>
-                            <span className='forgot-password'>Forgot your password?</span>
+                        <div className="input-div pass">
+
+                            <div className="div">
+                                <h5>Password:</h5>
+                                <input type={this.state.isShowPassword ? "password" : "text"} className="input"
+                                    value={this.state.password}
+                                    onChange={(event) => { this.onChangePassword(event) }}
+                                    onKeyDown={(event) => { this.handlerKeyDown(event) }}
+                                />
+                                {this.state.isShowPassword ?
+                                    <i class="fas fa-eye-slash" onClick={() => { this.onShowPassword() }}></i> :
+                                    <i class="fas fa-eye" onClick={() => { this.onShowPassword() }}></i>}
+
+                            </div>
                         </div>
-                        <div className='col-12 text-center mt-4'>
-                            <span className='text-other-login'>Or login with:</span>
+                        <div className="error">
+                            <span>{this.state.errMessage}</span>
                         </div>
-                        <div className='col-12 social-login'>
-                            <i className="fab fa-google-plus-g google"></i>
-                            <i className="fab fa-facebook-f facebook"></i>
+                        <a href="#">Forgot Password?</a>
+                        <button className="btn-header"
+                            onClick={(event) => { this.onHandleLogin(event) }}
+                        >Login</button>
+
+
+
+                        <div className="login-with-fa">
+                            <i className="fab fa-facebook icon-fa"></i>
+                            <i className="fab fa-google-plus-g icon-go"></i>
                         </div>
                     </div>
                 </div>
-           </div>
+            </div>
         )
     }
 }
@@ -102,8 +139,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
-        adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
-        adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        // adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
+        // adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        userLoginSuccess: (userinInfo) => dispatch(actions.userLoginSuccess(userinInfo)),
     };
 };
 

@@ -1,0 +1,19 @@
+.mt-3{
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 15px 0;
+    text-overflow: inherit;
+   
+}
+.manage-spacialty{
+    display: flex;
+    gap: 161px;
+    margin-bottom: 23px;
+    &-4{
+        width: 40%
+    }
+    &-5{
+        width: 40%
+    }
+}

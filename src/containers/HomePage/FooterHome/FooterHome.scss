@@ -1,0 +1,107 @@
+.footer_cover {
+    background-color: #a5e0f1;
+    width           : 100%;
+    margin-top      : 3.5rem;
+    margin-bottom   : 4rem;
+
+    .footer_container {
+        display              : grid;
+        grid-template-columns: 1fr .5fr .5fr .5fr;
+        column-gap           : 3rem;
+        padding              : 2.5rem 0 2rem;
+        margin-bottom        : .75rem;
+
+        .footer_content {
+            display: grid;
+
+            .footer_logo {
+                display       : inline-flex;
+                column-gap    : .75rem;
+                align-items   : center;
+                color         : #33b6e2;
+                font-weight   : 700;
+                text-transform: uppercase;
+                margin-bottom : 2.5rem;
+                transition    : .3s;
+                font-size     : 2rem;
+                align-items   : center;
+
+                .footer_logo-icon {
+                    font-size: 2rem;
+                    color    : #FFC10F;
+                }
+            }
+
+            .footer_logo:hover {
+                color: #FFC10F;
+            }
+
+            .footer_title {
+                font-size    : 1.75rem;
+                margin-bottom: 1.5rem;
+                font-weight  : 500;
+            }
+
+            .footer_subscribe {
+                display         : flex;
+                padding         : .75rem;
+                background-color: #4ABDE2;
+                justify-content : space-between;
+                border-radius   : .5rem;
+                width           : 80%;
+
+                .footer_input {
+                    width     : 70%;
+                    padding   : 0 0.5rem;
+                    border    : none;
+                    outline   : none;
+                    background: none;
+                    color     : #000;
+                    font-size : 1rem;
+
+                }
+
+                .footer_button {
+                    padding: .75rem;
+                }
+            }
+
+            .footer_data {
+                display: grid;
+                row-gap: .75rem;
+
+                .footer_information {
+                    font-size: 1.5rem;
+                }
+
+                .footer_social {
+                    display   : inline-flex;
+                    column-gap: .75rem;
+
+                    .footer_social-link {
+                        transform: .3s;
+                        font-size: 1rem;
+                        font-size: 1.75rem;
+                        color    : #000;
+                    }
+
+                    .footer_social-link:hover {
+                        transform: translateY(-.25rem);
+                    }
+                }
+            }
+
+            .footer_cards {
+                display      : inline-flex;
+                align-items  : center;
+                column-gap   : 0.5rem;
+                margin-bottom: 1.5rem;
+
+                .footer_card {
+                    width: 35px;
+                }
+            }
+
+        }
+    }
+}

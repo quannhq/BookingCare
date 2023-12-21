@@ -1,0 +1,64 @@
+.select {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content      : space-between;
+    gap                  : 20px;
+    margin-top           : 20px;
+
+    &-doctor {
+        Select {
+            width: 80%;
+        }
+    }
+
+    &-data {
+        width: 100%;
+
+        label {
+            display: block;
+        }
+
+        input {
+            width: 80%;
+        }
+    }
+}
+
+.schedule {
+    margin-top   : 20px;
+    margin-bottom: 20px;
+
+    &-time {
+        display              : grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows   : 1fr 1fr;
+        justify-content      : space-between;
+        gap                  : 20px;
+    }
+
+    button {
+        padding         : 5px;
+        margin          : 5px;
+        background-color: white;
+
+        &:hover {
+            opacity         : 0.8;
+            background-color: rgb(160, 160, 245);
+        }
+    }
+}
+
+.btn-save {
+    padding         : 5px;
+    margin          : 5px;
+    cursor          : pointer;
+    border-radius   : 5px;
+    background-color: #5252ff;
+    color           : white;
+}
+
+.btn-schedule {
+    &.active {
+        background-color: orange;
+    }
+}
