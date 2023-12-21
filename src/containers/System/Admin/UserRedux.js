@@ -105,6 +105,7 @@ class UserRedux extends Component {
         }
         return isValid;
     }
+    
     onChangeInput = (event, id) => {
         let copyState = { ...this.state };
         copyState[id] = event.target.value;
@@ -113,7 +114,6 @@ class UserRedux extends Component {
         });
     }
     editUser = (user) => {
-
         this.setState({
             email: user.email,
             password: user.password,
@@ -147,6 +147,7 @@ class UserRedux extends Component {
     render() {
         let { email, password, firstName, lastName, phoneNumber, address,
             gender, positionId, roleId, action, avatar } = this.state;
+
         return (
             <div className="container">
                 <h3 className="mt-3">
@@ -238,13 +239,11 @@ class UserRedux extends Component {
                             <option value="R3">Bệnh nhân</option>
                         </select>
                     </div>
-
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleFormControlFile1">Ảnh Đại diện</label>
                     <input type="file" className="form-control-file" id="exampleFormControlFile1"
                         onChange={(event) => { this.onChangeImage(event) }}
-                  
                     />
                 </div>
                 <button type="submit" className={action === CRUD_ACTION.EDIT ? "btn btn-warning" : "btn btn-primary"}
@@ -271,7 +270,6 @@ const mapDispatchToProps = dispatch => {
         createNewUser: (data) => dispatch(actions.createNewUser(data)),
         getAllUsers: () => dispatch(actions.getAllUsers()),
         editAUser: (id) => dispatch(actions.editAUser(id))
-
     };
 };
 

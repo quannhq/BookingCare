@@ -9,8 +9,10 @@ import ManageClinic from '../containers/System/Clinic/ManageClinic';
 import RegisterPackageGroupOrAcc from '../containers/System/RegisterPackageGroupOrAcc';
 
 class System extends Component {
+
     render() {
         const { systemMenuPath } = this.props;
+
         return (
             <div className="system-container">
                 <div className="system-list">
@@ -30,12 +32,14 @@ class System extends Component {
 }
 
 const mapStateToProps = state => {
+
     return {
         systemMenuPath: state.app.systemMenuPath
     };
 };
 
 const mapDispatchToProps = dispatch => {
+    
     return {
     };
 };

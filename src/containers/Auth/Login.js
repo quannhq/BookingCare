@@ -28,6 +28,7 @@ class Login extends Component {
             username: event.target.value
         })
     }
+
     onChangePassword = (event) => {
         this.setState({
             password: event.target.value
@@ -41,7 +42,6 @@ class Login extends Component {
     }
 
     onHandleLogin = async (event) => {
-        // event.preventDefault()
         this.setState({
             errMessage: ''
         })
@@ -117,8 +117,6 @@ class Login extends Component {
                             onClick={(event) => { this.onHandleLogin(event) }}
                         >Login</button>
 
-
-
                         <div className="login-with-fa">
                             <i className="fab fa-facebook icon-fa"></i>
                             <i className="fab fa-google-plus-g icon-go"></i>
@@ -139,8 +137,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
+
         // adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
         // adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        
         userLoginSuccess: (userinInfo) => dispatch(actions.userLoginSuccess(userinInfo)),
     };
 };
