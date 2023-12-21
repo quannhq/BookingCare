@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/adminAction';
 import UsersTable from './UsersTable';
 import { CRUD_ACTION } from '../../../utils/constant';
 import CommonUtils from '../../../utils/CommonUtils';
-class UserRedux extends Component {
 
+class UserRedux extends Component {
     constructor(props) {
         super(props);
 
@@ -23,13 +23,11 @@ class UserRedux extends Component {
             avatar: '',
             previewUrl: '',
             userEditId: '',
-
             action: '',
         }
     }
 
     async componentDidMount() {
-
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -45,7 +43,6 @@ class UserRedux extends Component {
                 positionId: '',
                 roleId: '',
                 avatar: '',
-
                 action: CRUD_ACTION.CREATE,
             })
         }
@@ -86,7 +83,7 @@ class UserRedux extends Component {
                 phoneNumber: this.state.phoneNumber,
                 gender: this.state.gender,
                 //avatar: this.stateTypes.STRING,
-                //chưa thực hiện upload anh
+                //chưa thực hiện upload image
                 roleId: this.state.roleId,
                 positionId: this.state.positionId,
             })
@@ -135,14 +132,11 @@ class UserRedux extends Component {
 
     onChangeImage = async (event) => {
         let data = event.target.files;
-        // console.log(data)
         let file = data[0];
-        // console.log(file)
+
         if (file) {
             let base64 = await CommonUtils.getBase64(file);
-            // console.log(base64);
             let objectURL = URL.createObjectURL(file);
-            console.log(objectURL)
             this.setState({
                 previewUrl: objectURL,
                 avatar: base64,
@@ -158,8 +152,6 @@ class UserRedux extends Component {
                 <h3 className="mt-3">
                     Thêm mới bác sĩ
                 </h3>
-
-
                 <div className="form-row">
                     <div className="form-group col-md-6">
                         <label htmlFor="inputEmail4">Email</label>
@@ -252,20 +244,15 @@ class UserRedux extends Component {
                     <label htmlFor="exampleFormControlFile1">Ảnh Đại diện</label>
                     <input type="file" className="form-control-file" id="exampleFormControlFile1"
                         onChange={(event) => { this.onChangeImage(event) }}
-                    // value={avatar}
+                  
                     />
                 </div>
-
-
                 <button type="submit" className={action === CRUD_ACTION.EDIT ? "btn btn-warning" : "btn btn-primary"}
                     onClick={() => this.onCreateUser()}
                 >{action === CRUD_ACTION.EDIT ? "Lưu lại" : "Đăng ký"}</button>
-
-
                 <UsersTable
                     editUser={this.editUser}
                 />
-
                 <div style={{ height: '100px' }}></div>
             </div>
         );
