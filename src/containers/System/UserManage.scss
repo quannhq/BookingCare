@@ -1,0 +1,129 @@
+.btn-add-user {
+    background   : #28A745;
+    min-width    : 150px;
+    max-width    : 200px;
+    text-align   : center;
+    margin-top   : 20px;
+    border-radius: 4px;
+    padding      : 6px;
+    color        : #fff;
+    font-weight  : 500;
+    cursor       : pointer;
+
+}
+
+#customers {
+    font-family    : Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width          : 100%;
+    margin         : 20px auto;
+
+}
+
+#customers td,
+#customers th {
+    border    : 1px solid #ddd;
+    padding   : 8px;
+    text-align: start;
+
+    .btn-cover {
+        text-align: center;
+
+        button {
+            background   : #28A745;
+            border       : none;
+            margin       : 0 3px;
+            padding      : 0 10px;
+            border-radius: 3px;
+
+            .btn-edit {
+                background: #28A745;
+                color     : yellow;
+            }
+
+            .btn-edit:hover {
+                opacity: 0.6;
+            }
+
+            .btn-delete {
+                // background: #28A745;
+                color     : rgb(177, 47, 47);
+            }
+
+            .btn-delete:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+
+
+
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+#customers th {
+    padding-top     : 12px;
+    padding-bottom  : 12px;
+    text-align      : left;
+    background-color: #28A745;
+    color           : white;
+}
+
+.modal-user-container {
+
+    .form-input {
+        display       : flex;
+        flex-direction: column;
+
+        .input-cover {
+            display       : flex;
+            flex-direction: row;
+
+            .input-1 {
+                display       : flex;
+                width         : 50%;
+                flex-direction: column;
+
+                label {
+                    margin: 10px 10px 0;
+
+                }
+
+                input {
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        .input-2 {
+            display       : flex;
+            width         : 100%;
+            flex-direction: column;
+
+            label {
+                margin: 10px 10px 0;
+            }
+
+            input {
+                margin: 0 10px;
+            }
+        }
+
+    }
+
+    .btn-submit {
+        padding  : 10px;
+        min-width: 100px;
+    }
+
+    .btn-cancel {
+        padding: 10px;
+    }
+
+
+}
