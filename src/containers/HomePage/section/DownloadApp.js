@@ -12,9 +12,9 @@ class DownloadApp extends Component {
             <div className="download_app section container">
                 <div className="download_left">
                     <div className="download_right-content">
-                        <h1 className="download_heading">Doctor Care</h1>
+                        <h1 className="download_heading">BookingCare</h1>
                         <p className="download_description">
-                            Doctor Care hiện là nền tảng đặt lịch khám bệnh trực tuyến
+                           BookingCare hiện là nền tảng đặt lịch khám bệnh trực tuyến
                             #1 Việt Nam. Đồng hành cùng chúng tôi, bạn có những
                             buổi thăm khám sức khoẻ một cách thoải mái, tiện lợi. Với Luxstay,
                             việc đặt lịch, phòng khám, chuyên khoa, bác sĩ...
