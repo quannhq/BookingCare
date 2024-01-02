@@ -36,7 +36,7 @@ class Navbar extends Component {
                     <div className="logo" onClick={() => this.goHomePage()}>
                         <a href="#" className="logo_link">
                             <i className="fas fa-hospital-alt logo_icon"></i>
-                            DoctorCare
+                            BookingCare
                         </a>
                     </div>
                     <div className="content">
@@ -58,7 +58,7 @@ class Navbar extends Component {
                         </div>
                     </div>
                     <div className="login">
-                        <a onClick={() => this.goLoginDoctor()} > Đăng nhập/ Đăng kí</a>
+                        <a onClick={() => this.goLoginDoctor()} > Đăng nhập</a>
                     </div>
                 </div>
             </div>
