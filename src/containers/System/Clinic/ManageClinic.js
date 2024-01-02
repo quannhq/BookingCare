@@ -73,9 +73,9 @@ class ManageClinic extends Component {
             descriptionMarkdown: this.state.contentMarkdown,
         })
         if (res && res.errCode === 0) {
-            toast.success('save information clinic susscess')
+            toast.success('Lưu thông tin thành công')
         } else {
-            toast.error('save information clinic error')
+            toast.error('Xảy ra lỗi')
         }
         console.log(this.state)
         this.setState({
