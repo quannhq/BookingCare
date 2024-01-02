@@ -87,10 +87,10 @@ class ScheduleManage extends Component {
         let { scheduleTime, currentDate, selectedOption } = this.state
         let result = [];
         if (!currentDate) {
-            toast.error("not time date")
+            toast.error("Chưa chọn ngày")
         }
         if (selectedOption && _.isEmpty(selectedOption)) {
-            toast.error("not chose doctor")
+            toast.error("Chưa chọn Bác sĩ")
         }
         let formatedDate = new Date(currentDate).getTime();
 
@@ -107,7 +107,7 @@ class ScheduleManage extends Component {
                 })
 
             } else {
-                toast.error("not select time ");
+                toast.error("Chưa chọn thời gian ");
                 return;
             }
         }
