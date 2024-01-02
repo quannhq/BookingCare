@@ -10,19 +10,15 @@ import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
 import Select from 'react-select';
 const mdParser = new MarkdownIt(/* Markdown-it options */);
-
 class ManageDoctor extends Component {
-
     constructor(props) {
         super(props);
-
         this.state = {
             contentMarkdown: '',
             contentHTML: '',
             description: '',
             selectedOption: '',
             listDoctors: [],
-
             listPrice: [],
             listPayment: [],
             listProvince: [],
@@ -143,6 +139,7 @@ class ManageDoctor extends Component {
         }
 
     };
+    
     handleChangeInfor = (selectOption, name) => {
         let stateName = name.name;
         let stateCopy = { ...this.state };
@@ -242,8 +239,25 @@ class ManageDoctor extends Component {
 
 
     render() {
-        let { selectedOption, listDoctors, listProvince, listPrice,
-            listPayment, selectPayment, selectPrice, selectProvince,
+        // const listPayment = [
+        //     { value: 'Tiền mặt', label: 'Tiền mặt' },
+        //     { value: 'Ngân hàng', label: 'Ngân hàng' }
+        //   ];
+        //   const listPrice = [
+        //     { value: '200000-500000', label: '200,000 - 500,000' },
+        //     { value: '500000-1000000', label: '500,000 - 1,000,000' }
+        //   ];
+
+        //   const listProvince = [
+        //     { value: 'Hà Nội', label: 'Hà Nội' },
+        //     { value: 'Hồ Chí Minh', label: 'Hồ Chí Minh' }
+        //   ];
+
+        let { selectedOption, listDoctors,
+             listProvince, 
+            listPrice,
+            listPayment,
+            selectPayment, selectPrice, selectProvince,
             listSpecialty, selectSpecialty, contentMarkdown, action, selectClinic, listClinic
         } = this.state;
         let { province, price, payment, specialty, clinic } = this.props
@@ -275,6 +289,7 @@ class ManageDoctor extends Component {
                         <label>Chọn giá</label> <br />
                         <Select name="selectPrice" id=""
                             value={selectPrice}
+                            // value={listPrice.find(option => option.value === selectPrice)}
                             onChange={this.handleChangeInfor}
                             options={listPrice}
                             placeholder={'Giá khám bệnh'}
@@ -285,6 +300,8 @@ class ManageDoctor extends Component {
                     <div className="manage-doctors-2">
                         <label>Chọn phương thức thanh toán </label><br />
                         <Select name="selectPayment" id=""
+                        
+                            // value={listPayment.find(option => option.value === selectPayment)}
                             value={selectPayment}
                             onChange={this.handleChangeInfor}
                             options={listPayment}
@@ -294,7 +311,9 @@ class ManageDoctor extends Component {
                     </div>
                     <div className="manage-doctors-3">
                         <label>Chọn tỉnh thành</label><br />
-                        <Select name="selectProvince" id="" value={selectProvince}
+                        <Select name="selectProvince" id="" 
+                            value={selectProvince}
+                            // value={listPayment.find(option => option.value === selectPayment)}
                             onChange={this.handleChangeInfor}
                             options={listProvince}
                             placeholder={'Chọn tỉnh thành phố'}>
