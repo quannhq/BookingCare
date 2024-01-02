@@ -5,7 +5,7 @@ const handleLoginApi = (email, password) => {
 }
 const createNewUserService = (data) => {
     // console.log('check data server ' + data);
-    toast.success('create new user')
+    toast.success('Tạo người dùng mới')
     return axios.post('/api/create-new-user', data);
 }
 const getAllUsersService = (inputId) => {
@@ -32,7 +32,7 @@ const getAInfoDoctorService = (inputId) => {
 
 const createInfoDoctorService = (data) => {
     // console.log('check data server ' + data);
-    toast.success('crate info doctor success');
+    toast.success('Tạo thông tin bác sĩ');
     return axios.post('/api/save-info-doctors', data);
 }
 
