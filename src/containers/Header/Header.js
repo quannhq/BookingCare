@@ -7,7 +7,6 @@ import './Header.scss';
 import { USER_ROLES } from '../../utils';
 import _ from 'lodash';
 
-// Header
 class Header extends Component {
     constructor(props) {
         super(props);
