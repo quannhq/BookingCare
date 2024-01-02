@@ -73,7 +73,7 @@ class PantentManage extends Component {
         }
         let res = await sendRemedyService(data);
         if (res && res.errCode === 0) {
-            toast.success('gửi lời cảm ơn thành công')
+            toast.success('Gửi lời cảm ơn thành công')
         }
 
         //load laij danh sachs 
