@@ -78,8 +78,6 @@ class BookingModal extends Component {
         // console.log('time in booking modal', time)
         let res = await saveBookingService({
 
-
-
             fullName: this.state.fullName,
             email: this.state.email,
             phoneNumber: this.state.phoneNumber,
@@ -93,13 +91,16 @@ class BookingModal extends Component {
             timeString: time,
             doctorName: name,
         })
+
         console.log('check res in booking modal', res);
+
         if (res && res.errCode === 0) {
 
-            toast.success('booking success')
+            toast.success('Đặt lịch thành công')
             this.props.closeBookingModal()
+
         } else {
-            toast.error('booking error')
+            toast.error('Xảy ra lỗi')
         }
     }
     renderTime = (time) => {
@@ -139,7 +140,7 @@ class BookingModal extends Component {
                         showDescription={true}
                     />
                     <div className="modal-body booking-modal-body">
-                        {/* <h5>Giá khám bệnh  <span></span>  </h5> */}
+                        <h5>Giá khám bệnh  <span></span>  </h5>
                         <div className="row">
                             <div className="col">
                                 <label className="">Họ và tên</label>
