@@ -25,6 +25,7 @@ class UsersTable extends Component {
             this.setState({
                 users: this.props.users
             });
+            // console.log(this.state.users)
         }
     }
 
@@ -33,12 +34,14 @@ class UsersTable extends Component {
     }
 
     editUsers = (user) => {
+        // console.log(user)
         this.props.editUser(user)
     }
     render() {
         let { users } = this.state
         console.log(users)
         return (
+
             <div className="container">
                 <div className="table-container mt-3 mb-3">
                     <table class="table table-bordered">
