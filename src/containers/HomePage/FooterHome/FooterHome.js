@@ -5,7 +5,7 @@ import card1 from "../../../assets/card1.png"
 import card2 from "../../../assets/card2.png"
 import card3 from "../../../assets/card3.png"
 import card4 from "../../../assets/card4.png"
-//HomePage
+
 class FooterHome extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class FooterHome extends Component {
                     <div className="footer_content">
                         <Link href="#" className="footer_logo">
                             <i className="fas fa-hospital-alt footer_logo-icon"></i>
-                            DoctorCare
+                            BookingCare
                         </Link>
 
                         <h3 className="footer_title">
@@ -43,9 +43,9 @@ class FooterHome extends Component {
                             Địa chỉ
                         </h3>
                         <ul className="footer_data">
-                            <li className="footer_information">Khu Phố 6 - Linh Trung -Thủ Đức - HCM</li>
-                            <li className="footer_information">Tạ Quang Bửu - Linh Trung</li>
-                            <li className="footer_information">037 899 9999</li>
+                            <li className="footer_information">1234 - Quận 3 - HCM</li>
+                            <li className="footer_information">Phạm Văn Đồng - 43210</li>
+                            <li className="footer_information">123-456-789</li>
                         </ul>
                     </div>
 
@@ -54,7 +54,7 @@ class FooterHome extends Component {
                             Liên hệ
                         </h3>
                         <ul className="footer_data">
-                            <li className="footer_information">9999 - Thủ Đức - HCM</li>
+                            <li className="footer_information">1234 - Quận 3 - HCM</li>
 
                             <div className="footer_social">
                                 <Link href="#" className="footer_social-link">
